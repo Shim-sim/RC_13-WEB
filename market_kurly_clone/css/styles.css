@@ -1,7 +1,49 @@
 @import 'reset.css';
 
-.test {
-  height: 300px;
-  width: 300px;
+.header_wrap {
   border: 1px solid red;
+  position: relative;
+  width: 1050px;
+  height: 100px;
+  margin: 0px auto;
+  letter-spacing: -0.3px;
+}
+
+.header_wrap_form {
+  position: absolute;
+  right: 0;
+  height: 10px;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.header_wrap_form a {
+  display: block;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.header_wrap_form a:first-child {
+  color: #985dad;
+}
+
+.header_form_split {
+  width: 1px;
+  height: 13px;
+  margin: 0px 12px;
+  background-color: rgb(217, 217, 217);
+}
+
+.dot {
+  width: 8px;
+  height: 5px;
+  background-image: url(https://res.kurly.com/pc/ico/1908/ico_down_16x10.png);
+  background-size: cover;
+  background-position: center center;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 1px;
 }
