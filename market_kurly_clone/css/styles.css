@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import 'header_middle.css';
 
 .header_wrap {
   position: relative;
