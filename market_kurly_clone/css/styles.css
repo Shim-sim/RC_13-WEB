@@ -1,6 +1,11 @@
 @import 'reset.css';
 @import 'header_middle.css';
 @import 'main_banners.css';
+@import 'today_recommend_product.css';
+
+body {
+  height: 1000vh;
+}
 
 .header_wrap {
   position: relative;
