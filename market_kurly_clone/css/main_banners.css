@@ -1,0 +1,12 @@
+.main_banners {
+  position: relative;
+  height: fit-content;
+  max-width: 1900px;
+  margin: 0px auto 40px;
+}
+
+.main_banners img {
+  width: 100%;
+  min-width: 1050px;
+  height: 370px;
+}
