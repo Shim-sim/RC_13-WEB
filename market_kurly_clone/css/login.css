@@ -1,0 +1,84 @@
+.login_form {
+  min-width: 1050px;
+  margin-top: 90px;
+  margin-bottom: 60px;
+  background-color: #fff;
+}
+
+.login_title {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.login_form_info {
+  width: 340px;
+  margin: 0 auto;
+  letter-spacing: -0.6px;
+}
+.login_info div:first-child {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.login_info div input {
+  height: 54px;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #ddd;
+  line-height: 1.5;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 11px 1px 15px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.login_search {
+  display: flex;
+  justify-content: flex-end;
+  /* margin-bottom: ; */
+  font-size: 13px;
+}
+
+.login_search span {
+  color: #333;
+  cursor: pointer;
+}
+
+.login_search span:nth-child(2) {
+  width: 1px;
+  height: 10px;
+  margin: 1px 6px 0;
+}
+
+.login_button {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.login_button button {
+  font-weight: 500;
+  border-radius: 4px;
+  height: 54px;
+  font-size: 16px;
+}
+
+.login_button button:first-child {
+  background-color: #5e0080;
+  color: white;
+  border: 0 none;
+}
+
+.login_button button:last-child {
+  background-color: white;
+  color: #5e0080;
+  border: 1px solid #5f0080;
+  margin-top: 10px;
+}

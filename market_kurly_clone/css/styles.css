@@ -2,6 +2,7 @@
 @import 'header_middle.css';
 @import 'main_banners.css';
 @import 'recommend_product.css';
+@import 'login.css';
 
 body {
   height: 1000vh;
