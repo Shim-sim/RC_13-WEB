@@ -2,8 +2,8 @@ const products = document.querySelector('.recommend_products_box');
 const productsArray = [
   [
     'https://img-cf.kurly.com/shop/data/goods/1602045016638l0.jpg',
-    '[블랙 갈릭] 특제소스',
-    '6,900원',
+    '[퀴네] 블랙 갈릭소스',
+    '4,900원',
   ],
   [
     'https://img-cf.kurly.com/shop/data/goods/1653037954138l0.jpeg',
