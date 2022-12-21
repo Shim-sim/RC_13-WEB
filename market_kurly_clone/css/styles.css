@@ -3,6 +3,7 @@
 @import 'main_banners.css';
 @import 'recommend_product.css';
 @import 'login.css';
+@import 'footer.css';
 
 body {
   height: 1000vh;

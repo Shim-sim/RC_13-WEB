@@ -1,0 +1,68 @@
+.footer_info {
+  padding-top: 30px;
+  border-top: 1px solid #f7f7f7;
+}
+
+#footer {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+.footer_helpinfo {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.footer_helpinfo_left h2 {
+  padding-bottom: 17px;
+  font-weight: 500;
+  line-height: 29px;
+  font-size: 20px;
+}
+
+.footer_helpinfo_left strong {
+  display: block;
+  padding-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.footer_helpinfo_left span {
+  margin-left: 8px;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.footer_helpinfo_ask {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_helpinfo_ask button {
+  display: block;
+  background: white;
+  width: 140px;
+  height: 40px;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  line-height: 39px;
+  text-align: center;
+  margin: 16px 0 16px 0;
+}
+
+.footer_helpinfo_box {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer_helpinfo_text {
+  display: block;
+  margin-top: 16px;
+  margin-left: 10px;
+  color: #999;
+  letter-spacing: -0.5px;
+  line-height: 16.8px;
+}
