@@ -1,4 +1,7 @@
-const askBox = document.querySelector('.footer_helpinfo_ask');
+const ASK_BOX = document.querySelector('.footer_helpinfo_ask');
+const FOOTER_POLICY = document.querySelector('.footer_helpinfo_policy');
+const FOOTER_ICON = document.querySelector('.footer_helpinfo_icon');
+
 const askBoxArray = [
   [
     '카카오톡 문의',
@@ -11,8 +14,25 @@ const askBoxArray = [
   ],
 ];
 
+const policyArray = [
+  '컬리소개',
+  '컬리소개영상',
+  '인재채용',
+  '이용약관',
+  '개인정보처리방침',
+  '이용안내',
+];
+
+const iconArray = [
+  'https://res.kurly.com/pc/ico/1810/ico_instagram.png',
+  '	https://res.kurly.com/pc/ico/1810/ico_fb.png',
+  'https://res.kurly.com/pc/ico/1810/ico_blog.png',
+  '	https://res.kurly.com/pc/ico/1810/ico_naverpost.png',
+  'https://res.kurly.com/pc/ico/1810/ico_youtube.png',
+];
+
 askBoxArray.map((item) => {
-  return askBox.insertAdjacentHTML(
+  return ASK_BOX.insertAdjacentHTML(
     'beforeend',
     `
   <div class="footer_helpinfo_box">
@@ -21,6 +41,24 @@ askBoxArray.map((item) => {
     ${item[1]}
   </div>
 </div>
+  `
+  );
+});
+
+policyArray.map((item) => {
+  return FOOTER_POLICY.insertAdjacentHTML(
+    'beforeend',
+    `
+    <li>${item}</li>
+  `
+  );
+});
+
+iconArray.map((item) => {
+  return FOOTER_ICON.insertAdjacentHTML(
+    'beforeend',
+    `
+    <img src=${item} alt="링크아이콘" />
   `
   );
 });
