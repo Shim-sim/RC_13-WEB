@@ -4,6 +4,7 @@
 @import 'recommend_product.css';
 @import 'login.css';
 @import 'footer.css';
+@import 'detailProduct.css';
 
 body {
   height: 1000vh;
