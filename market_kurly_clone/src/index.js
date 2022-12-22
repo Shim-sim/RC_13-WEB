@@ -1,4 +1,9 @@
 const products = document.querySelector('.recommend_products_box');
+const mainBanners = document.querySelector('.main_banners');
+const buttonOfBanner = document.querySelectorAll('.main_banners > button');
+
+console.log(buttonOfBanner);
+
 const productsArray = [
   [
     'https://img-cf.kurly.com/shop/data/goods/1602045016638l0.jpg',
@@ -45,4 +50,16 @@ productsArray.map((item) => {
     </div>
   </div>`
   );
+});
+
+mainBanners.addEventListener('mouseover', () => {
+  buttonOfBanner.forEach((button) => {
+    button.classList.add('test');
+  });
+});
+
+mainBanners.addEventListener('mouseout', () => {
+  buttonOfBanner.forEach((button) => {
+    button.classList.remove('test');
+  });
 });
