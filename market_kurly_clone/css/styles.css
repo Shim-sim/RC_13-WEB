@@ -6,10 +6,6 @@
 @import 'footer.css';
 @import 'detailProduct.css';
 
-body {
-  height: 1000vh;
-}
-
 .header_wrap {
   position: relative;
   width: 1050px;

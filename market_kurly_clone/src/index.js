@@ -1,8 +1,9 @@
 const products = document.querySelector('.recommend_products_box');
-const mainBanners = document.querySelector('.main_banners');
-const buttonOfBanner = document.querySelectorAll('.main_banners > button');
-
-console.log(buttonOfBanner);
+const mainBanners = document.querySelector('.main_banners_inner > img');
+const buttonOfBanner = document.querySelectorAll(
+  '.main_banners_inner > button'
+);
+const headerMiddle = document.querySelector('.header_middle');
 
 const productsArray = [
   [
@@ -52,13 +53,13 @@ productsArray.map((item) => {
   );
 });
 
-mainBanners.addEventListener('mouseover', () => {
+mainBanners.addEventListener('mouseenter', () => {
   buttonOfBanner.forEach((button) => {
     button.classList.add('test');
   });
 });
 
-mainBanners.addEventListener('mouseout', () => {
+mainBanners.addEventListener('mouseleave', () => {
   buttonOfBanner.forEach((button) => {
     button.classList.remove('test');
   });

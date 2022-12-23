@@ -1,12 +1,13 @@
 .header_middle {
   display: flex;
-  /* top: 0;
-  position: sticky; */
+  position: sticky;
+  top: 0;
+  background-color: white;
   justify-content: space-evenly;
   min-width: 1050px;
   height: 56px;
   margin: 0px auto;
-  z-index: 10;
+  z-index: 100;
   box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
 }
 
