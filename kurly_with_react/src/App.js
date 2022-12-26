@@ -1,8 +1,15 @@
+/* eslint-disable */
+
+import Header from './components/Common/Header';
+import NavBar from './components/Common/NavBar';
+import styled from 'styled-components';
+
 function App() {
   return (
-    <div className="App">
-      <h1>안녕 리액트</h1>
-    </div>
+    <>
+      <Header />
+      <NavBar />
+    </>
   );
 }
 
