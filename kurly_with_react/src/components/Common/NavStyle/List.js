@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Wrapper = styled.ul`
   display: flex;
   margin-left: 30px;
+  font-weight: 600;
 
   li {
     display: flex;

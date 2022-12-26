@@ -94,13 +94,13 @@ const TitleInfo = () => {
         <span>마켓컬리</span>
         <span>뷰티컬리</span>
       </div>
-      <div class="info_center">
+      <div className="info_center">
         <div>
           <input placeholder="검색어를 입력해주세요" />
           <button></button>
         </div>
       </div>
-      <div class="info_right">
+      <div className="info_right">
         <div></div>
         <div></div>
         <div></div>
