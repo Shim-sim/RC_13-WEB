@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function Banner() {
   return (
-    <Carousel>
+    <Carousel style={{ margin: '0px auto 40px' }}>
       {[0, 1, 2, 3].map((item, index) => (
         <Carousel.Item key={item} interval={2000}>
           <img
