@@ -33,7 +33,6 @@ const TitleInfoWrap = styled.div`
   .info_center div {
     display: flex;
     align-items: center;
-
     justify-content: space-between;
     width: 400px;
     height: 48px;
