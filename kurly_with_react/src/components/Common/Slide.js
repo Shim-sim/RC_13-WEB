@@ -93,7 +93,7 @@ const Slide = ({ data }) => {
     <ProductsWrapper>
       <StyledSlider {...settings}>
         {data.map((item, idx) => (
-          <ProductBox>
+          <ProductBox key={item.id}>
             <ImgBox>
               <ProductImg src={item.img} />
               <Button>
