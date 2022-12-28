@@ -2,7 +2,6 @@
 import { Reset } from 'styled-reset';
 import Header from './components/Common/Header';
 import NavBar from './components/Common/NavBar';
-import styled from 'styled-components';
 import Main from './pages/Main';
 import Detail from './pages/Detail';
 import Cart from './pages/Cart';

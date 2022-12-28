@@ -18,7 +18,7 @@ const StrongText = styled.div`
 
 const HappyText = styled.h2`
   padding-bottom: 17px;
-  font-weight: 500;
+  font-weight: 800;
   line-height: 29px;
   font-size: 20px;
 `;
