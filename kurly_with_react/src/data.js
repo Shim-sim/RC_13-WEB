@@ -48,3 +48,32 @@ export const products = [
     img: 'https://img-cf.kurly.com/shop/data/goods/164991958397l0.jpg',
   },
 ];
+
+export const askText = [
+  [
+    '카카오톡 문의',
+    '월~토요일 | 오전 7시 - 오후 6시\n 일~공요일 | 오전 7시 - 오후 1시',
+  ],
+  ['1:1 문의', '365일\n고객센터 운영시간에 순차적으로 답변드리겠습니다.'],
+  [
+    '대량주문 문의',
+    '월~토요일 | 오전 7시 - 오후 6시\n점심시간 | 낮 12시 - 오후 1시',
+  ],
+];
+
+export const policyArray = [
+  '컬리소개',
+  '컬리소개영상',
+  '인재채용',
+  '이용약관',
+  '개인정보처리방침',
+  '이용안내',
+];
+
+export const iconArray = [
+  'https://res.kurly.com/pc/ico/1810/ico_instagram.png',
+  '	https://res.kurly.com/pc/ico/1810/ico_fb.png',
+  'https://res.kurly.com/pc/ico/1810/ico_blog.png',
+  '	https://res.kurly.com/pc/ico/1810/ico_naverpost.png',
+  'https://res.kurly.com/pc/ico/1810/ico_youtube.png',
+];
