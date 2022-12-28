@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const ProductsWrapper = styled.div`
   position: relative;
-  width: 1150px;
+  width: 1050px;
   margin: 0px auto;
   overflow: hidden;
 `;
@@ -18,7 +18,6 @@ const ProductBox = styled.div`
   display: flex;
   flex-direction: row;
   box-sizing: content-box;
-
   margin-right: 10px;
 `;
 
