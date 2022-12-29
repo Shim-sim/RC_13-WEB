@@ -105,7 +105,9 @@ const TitleInfo = () => {
       <div className="info_right">
         <div></div>
         <div></div>
-        <div></div>
+        <Link to="/cart">
+          <div></div>
+        </Link>
       </div>
     </TitleInfoWrap>
   );
