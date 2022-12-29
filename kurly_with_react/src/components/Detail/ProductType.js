@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ProductTypeBox = styled.div`
@@ -106,7 +106,7 @@ const OrderPrice = styled.div`
   padding-right: 5px;
 `;
 
-const ProductType = () => {
+const ProductType = ({ count, HandleQuantity }) => {
   return (
     <ProductTypeBox>
       <ProductTable>
@@ -115,9 +115,9 @@ const ProductType = () => {
           <OrderBoxTitle>[졸리마] 트윙클자M 8종</OrderBoxTitle>
           <OrderButtonWrapper>
             <OrderButtonBox>
-              <button></button>
-              <OrderCount>1</OrderCount>
-              <button></button>
+              <button onClick={() => HandleQuantity('minus')} />
+              <OrderCount>{count}</OrderCount>
+              <button onClick={() => HandleQuantity('plus')} />
             </OrderButtonBox>
             <div>
               <OrderPrice>10,000원</OrderPrice>

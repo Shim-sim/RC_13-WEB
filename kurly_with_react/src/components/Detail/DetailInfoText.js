@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProductType from './ProductType';
 import OrderPrice from './OrderPrice';
@@ -72,6 +72,21 @@ const ProductSelectBox = styled.div`
 `;
 
 const DetailInfoText = () => {
+  const [count, setCount] = useState(1);
+  const [productPrice, setProductPrice] = useState(10000);
+
+  const convertPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
+  const HandleQuantity = (type) => {
+    if (type === 'plus') {
+      setCount(count + 1);
+    } else {
+      if (count === 1) return;
+      setCount(count - 1);
+    }
+  };
   return (
     <>
       <PriceBox>
@@ -116,8 +131,12 @@ const DetailInfoText = () => {
         </dl>
       </ProductInfoBox>
       <ProductSelectBox>
-        <ProductType />
-        <OrderPrice />
+        <ProductType count={count} HandleQuantity={HandleQuantity} />
+        <OrderPrice
+          productPrice={productPrice}
+          count={count}
+          convertPrice={convertPrice}
+        />
         <IntoBasket />
       </ProductSelectBox>
     </>

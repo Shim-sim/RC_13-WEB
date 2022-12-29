@@ -39,13 +39,13 @@ const OrderAmout = styled.div`
   }
 `;
 
-const OrderPrice = () => {
+const OrderPrice = ({ productPrice, count, convertPrice }) => {
   return (
     <OrderPriceBox>
       <OrderPriceWrapper>
         <OrderAmout>
           <span>총 상품금액:</span>
-          <span>10,000</span>
+          <span>{convertPrice(productPrice * count)}</span>
           <span>원</span>
         </OrderAmout>
       </OrderPriceWrapper>
@@ -54,3 +54,5 @@ const OrderPrice = () => {
 };
 
 export default OrderPrice;
+
+// 장바구니 페이지 만들기
