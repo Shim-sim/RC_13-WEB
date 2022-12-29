@@ -71,7 +71,7 @@ const KurlyInfo = () => {
       </BusinessInfo>
       <IconInfo>
         {iconArray.map((item) => (
-          <img src={item} alt={'icon'} />
+          <img key={item} src={item} alt={'icon'} />
         ))}
       </IconInfo>
     </KurlyInfoWrapper>
