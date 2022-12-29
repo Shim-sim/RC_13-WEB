@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const LoginInfoWrap = styled.div`
   position: absolute;
@@ -16,7 +17,6 @@ const LoginInfoWrap = styled.div`
   a {
     display: block;
     cursor: pointer;
-    vertical-align: middle;
   }
 
   a:first-child {
@@ -47,7 +47,9 @@ const LoginInfo = () => {
     <LoginInfoWrap>
       <a>회원가입</a>
       <div></div>
-      <a>로그인</a>
+      <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>
+        로그인
+      </Link>
       <div></div>
       <a>
         고객센터

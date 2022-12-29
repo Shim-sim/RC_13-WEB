@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import Logo from '../../assets/logo.svg';
+import { Link } from 'react-router-dom';
 const TitleInfoWrap = styled.div`
   height: 100px;
   padding-top: 36px;
@@ -89,7 +90,9 @@ const TitleInfo = () => {
   return (
     <TitleInfoWrap>
       <div className="info_left">
-        <img src={Logo} alt="메인이미지" />
+        <Link to="/">
+          <img src={Logo} alt="메인이미지" />
+        </Link>
         <span>마켓컬리</span>
         <span>뷰티컬리</span>
       </div>
