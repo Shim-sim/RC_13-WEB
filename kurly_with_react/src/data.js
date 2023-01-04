@@ -47,6 +47,30 @@ export const products = [
     price: '6,800원',
     img: 'https://img-cf.kurly.com/shop/data/goods/164991958397l0.jpg',
   },
+  {
+    id: 8,
+    title: '[폴스] 팜하우스 골드 밀크 1L',
+    price: '3,780원',
+    img: 'https://img-cf.kurly.com/shop/data/goods/1598867383884l0.jpg',
+  },
+  {
+    id: 9,
+    title: '[프레시지] 가니쉬세트',
+    price: '4,100원',
+    img: 'https://img-cf.kurly.com/shop/data/goods/1637044279464l0.jpg',
+  },
+  {
+    id: 10,
+    title: '[로레토] 블랙 올리브',
+    price: '3,000원',
+    img: 'https://img-cf.kurly.com/shop/data/goods/1569910754907l0.jpg',
+  },
+  {
+    id: 11,
+    title: '조선향미 4kg',
+    price: '23,310원',
+    img: 'https://img-cf.kurly.com/shop/data/goods/1653038353558l0.jpeg',
+  },
 ];
 
 export const askText = [
