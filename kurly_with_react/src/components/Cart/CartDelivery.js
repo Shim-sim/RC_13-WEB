@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const CartDeliveryWrapper = styled.div`
@@ -72,7 +72,7 @@ const ProductsPriceBox = styled.div`
 const PriceBlock = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: ${(props) => (props.top == 'none' ? '0px' : '12px')};
+  padding-top: ${(props) => (props.top === 'none' ? '0px' : '12px')};
   border-top: ${(props) => props.border && '1px solid #f4f4f4'};
   margin-top: ${(props) => props.margin && '20px'};
 `;
@@ -101,8 +101,6 @@ const DeliveryBottomBox = styled.div`
   padding-top: 20px;
 `;
 const CartDelivery = () => {
-  const [emText] = useState('배송지를 등록하고\n');
-
   return (
     <CartDeliveryWrapper>
       <CartDeliveryBox>
@@ -110,7 +108,8 @@ const CartDelivery = () => {
           <DestinationTitle>배송지</DestinationTitle>
           <DestinationSearchBox>
             <SearchText>
-              <em>{emText}</em>
+              <em>배송지를 등록하고</em>
+              <br />
               <span>구매 가능한 상품을 확인하세요!</span>
             </SearchText>
           </DestinationSearchBox>
