@@ -71,13 +71,9 @@ const ProductSelectBox = styled.div`
   padding-bottom: 40px;
 `;
 
-const DetailInfoText = () => {
+const DetailInfoText = ({ paramsId, products, convertPrice }) => {
+  console.log(products);
   const [count, setCount] = useState(1);
-  const [productPrice, setProductPrice] = useState(10000);
-
-  const convertPrice = (price) => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
 
   const HandleQuantity = (type) => {
     if (type === 'plus') {
@@ -90,7 +86,7 @@ const DetailInfoText = () => {
   return (
     <>
       <PriceBox>
-        <Price>10,000</Price>
+        <Price>{convertPrice(products[paramsId].price)}</Price>
         <PriceText>원</PriceText>
       </PriceBox>
       <ProductInfoBox>
@@ -131,9 +127,15 @@ const DetailInfoText = () => {
         </dl>
       </ProductInfoBox>
       <ProductSelectBox>
-        <ProductType count={count} HandleQuantity={HandleQuantity} />
+        <ProductType
+          products={products}
+          paramsId={paramsId}
+          count={count}
+          HandleQuantity={HandleQuantity}
+        />
         <OrderPrice
-          productPrice={productPrice}
+          products={products}
+          paramsId={paramsId}
           count={count}
           convertPrice={convertPrice}
         />

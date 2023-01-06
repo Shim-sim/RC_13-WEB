@@ -24,11 +24,11 @@ const ProductPrice = styled.span`
   line-height: 1.5;
   white-space: nowrap;
 `;
-const SlideText = ({ products }) => {
+const SlideText = ({ products, convertPrice }) => {
   return (
     <ProductInfo>
       <ProductName>{products.title}</ProductName>
-      <ProductPrice>{products.price}</ProductPrice>
+      <ProductPrice>{convertPrice(products.price)}원</ProductPrice>
     </ProductInfo>
   );
 };

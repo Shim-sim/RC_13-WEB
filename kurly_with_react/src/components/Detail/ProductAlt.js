@@ -7,12 +7,8 @@ const StyledImg = styled.div`
   background: url(${(props) => props.backImg}) 0% 0% / cover;
 `;
 
-const ProductAlt = () => {
-  return (
-    <StyledImg
-      backImg={'https://img-cf.kurly.com/shop/data/goods/1586496334858l0.jpg'}
-    />
-  );
+const ProductAlt = ({ products, paramsId }) => {
+  return <StyledImg backImg={`${products[paramsId].img}`} />;
 };
 
 export default ProductAlt;

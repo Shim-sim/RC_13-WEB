@@ -54,18 +54,22 @@ const MoreInfo = styled.h2`
   letter-spacing: -0.5px;
 `;
 
-const DetailInfo = () => {
+const DetailInfo = ({ products, paramsId, convertPrice }) => {
   return (
     <DetailInfoBox>
       <DeliverType>샛별배송</DeliverType>
       <DetailTitleBox>
         <DetailTitle>
-          <h1>[졸리마] 트윙클자 M 8종 (택1)</h1>
+          <h1>{products[paramsId].title}</h1>
           <ShareButton />
         </DetailTitle>
-        <MoreInfo>어디에나 활용 가능한 밀폐용기</MoreInfo>
+        <MoreInfo>세부사항을 확인해주세요</MoreInfo>
       </DetailTitleBox>
-      <DetailInfoText />
+      <DetailInfoText
+        products={products}
+        paramsId={paramsId}
+        convertPrice={convertPrice}
+      />
     </DetailInfoBox>
   );
 };

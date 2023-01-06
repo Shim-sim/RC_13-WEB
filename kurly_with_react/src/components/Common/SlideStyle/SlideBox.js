@@ -34,8 +34,7 @@ const ProductImg = styled.img.attrs({ alt: '제품 이미지' })`
   }
 `;
 
-const SlideBox = ({ products }) => {
-  console.log(products);
+const SlideBox = ({ products, convertPrice }) => {
   return (
     <ProductBox>
       <ImgBox>
@@ -47,7 +46,7 @@ const SlideBox = ({ products }) => {
             >
               <ProductImg src={item.img} />
             </Link>
-            <SlideText products={item} />
+            <SlideText products={item} convertPrice={convertPrice} />
             <IntoCartButton />
           </Container>
         ))}

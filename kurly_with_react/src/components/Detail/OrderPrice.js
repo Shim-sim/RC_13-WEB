@@ -39,13 +39,15 @@ const OrderAmout = styled.div`
   }
 `;
 
-const OrderPrice = ({ productPrice, count, convertPrice }) => {
+const OrderPrice = ({ count, convertPrice, products, paramsId }) => {
+  const allPrice = products[paramsId].price;
+
   return (
     <OrderPriceBox>
       <OrderPriceWrapper>
         <OrderAmout>
           <span>총 상품금액:</span>
-          <span>{convertPrice(productPrice * count)}</span>
+          <span>{convertPrice(allPrice * count)}</span>
           <span>원</span>
         </OrderAmout>
       </OrderPriceWrapper>

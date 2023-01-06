@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import StyledImg from '../components/Detail/ProductAlt';
 import DetailInfo from '../components/Detail/DetailInfo';
 import DetailNav from '../components/Detail/DetailNav';
+import { useParams } from 'react-router-dom';
 
 const DetailBox = styled.div`
   position: relative;
@@ -17,12 +18,19 @@ const DetailMain = styled.div`
   justify-content: space-between;
 `;
 
-const Detail = () => {
+const Detail = ({ products, convertPrice }) => {
+  let { id } = useParams();
+  let paramsId = parseInt(id);
+
   return (
     <DetailBox>
       <DetailMain>
-        <StyledImg />
-        <DetailInfo />
+        <StyledImg products={products} paramsId={paramsId} />
+        <DetailInfo
+          products={products}
+          paramsId={paramsId}
+          convertPrice={convertPrice}
+        />
       </DetailMain>
       <DetailNav />
     </DetailBox>

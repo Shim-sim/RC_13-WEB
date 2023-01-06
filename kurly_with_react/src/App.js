@@ -11,14 +11,23 @@ import { Route, Routes, Link } from 'react-router-dom';
 import { products } from './data.js';
 
 function App() {
+  const convertPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
   return (
     <>
       <Reset />
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<Main products={products} />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route
+          path="/"
+          element={<Main products={products} convertPrice={convertPrice} />}
+        />
+        <Route
+          path="/detail/:id"
+          element={<Detail products={products} convertPrice={convertPrice} />}
+        />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
       </Routes>

@@ -50,7 +50,7 @@ const LeftButton = styled.button`
 `;
 
 const TOTAL_SLIDES = 2;
-const Slide = ({ products }) => {
+const Slide = ({ products, convertPrice }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
 
@@ -70,7 +70,7 @@ const Slide = ({ products }) => {
   return (
     <ProductsWrapper>
       <FlexBox ref={slideRef}>
-        <SlideBox products={products} />
+        <SlideBox products={products} convertPrice={convertPrice} />
       </FlexBox>
       {currentSlide ? (
         <LeftButton

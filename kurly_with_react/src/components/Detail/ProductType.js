@@ -106,13 +106,13 @@ const OrderPrice = styled.div`
   padding-right: 5px;
 `;
 
-const ProductType = ({ count, HandleQuantity }) => {
+const ProductType = ({ count, HandleQuantity, paramsId, products }) => {
   return (
     <ProductTypeBox>
       <ProductTable>
         <dt>상품선택</dt>
         <OrderBox>
-          <OrderBoxTitle>[졸리마] 트윙클자M 8종</OrderBoxTitle>
+          <OrderBoxTitle>{products[paramsId].title}</OrderBoxTitle>
           <OrderButtonWrapper>
             <OrderButtonBox>
               <button onClick={() => HandleQuantity('minus')} />
@@ -120,7 +120,7 @@ const ProductType = ({ count, HandleQuantity }) => {
               <button onClick={() => HandleQuantity('plus')} />
             </OrderButtonBox>
             <div>
-              <OrderPrice>10,000원</OrderPrice>
+              <OrderPrice>{products[paramsId].price}원</OrderPrice>
             </div>
           </OrderButtonWrapper>
         </OrderBox>
