@@ -41,7 +41,7 @@ const SlideBox = ({ products, convertPrice }) => {
         {products.map((item) => (
           <Container key={item.id}>
             <Link
-              to="/detail"
+              to={`/detail/${item.id}}`}
               style={{ textDecoration: 'none', color: 'black' }}
             >
               <ProductImg src={item.img} />

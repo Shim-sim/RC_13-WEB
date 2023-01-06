@@ -9,11 +9,13 @@ import Login from './pages/Login';
 import Footer from './components/Common/Footer';
 import { Route, Routes, Link } from 'react-router-dom';
 import { products } from './data.js';
+import { useParams } from 'react-router-dom';
 
 function App() {
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
+
   return (
     <>
       <Reset />

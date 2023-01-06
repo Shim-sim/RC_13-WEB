@@ -72,7 +72,6 @@ const ProductSelectBox = styled.div`
 `;
 
 const DetailInfoText = ({ paramsId, products, convertPrice }) => {
-  console.log(products);
   const [count, setCount] = useState(1);
 
   const HandleQuantity = (type) => {
