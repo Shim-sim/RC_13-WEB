@@ -24,9 +24,14 @@ const Container = styled.div`
 `;
 
 const ProductImg = styled.img.attrs({ alt: '제품 이미지' })`
-  width: 95%;
+  max-width: 95%;
   height: 75%;
+  object-fit: cover;
   margin-right: 18px;
+  transition: all 0.5s ease-in-out 0s;
+  &:hover {
+    transform: scale(1.009);
+  }
 `;
 
 const SlideBox = ({ data }) => {
