@@ -24,11 +24,11 @@ const ProductPrice = styled.span`
   line-height: 1.5;
   white-space: nowrap;
 `;
-const SlideText = ({ data }) => {
+const SlideText = ({ products }) => {
   return (
     <ProductInfo>
-      <ProductName>{data.title}</ProductName>
-      <ProductPrice>{data.price}</ProductPrice>
+      <ProductName>{products.title}</ProductName>
+      <ProductPrice>{products.price}</ProductPrice>
     </ProductInfo>
   );
 };

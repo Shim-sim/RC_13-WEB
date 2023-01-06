@@ -34,11 +34,12 @@ const ProductImg = styled.img.attrs({ alt: '제품 이미지' })`
   }
 `;
 
-const SlideBox = ({ data }) => {
+const SlideBox = ({ products }) => {
+  console.log(products);
   return (
     <ProductBox>
       <ImgBox>
-        {data.map((item) => (
+        {products.map((item) => (
           <Container key={item.id}>
             <Link
               to="/detail"
@@ -46,7 +47,7 @@ const SlideBox = ({ data }) => {
             >
               <ProductImg src={item.img} />
             </Link>
-            <SlideText data={item} />
+            <SlideText products={item} />
             <IntoCartButton />
           </Container>
         ))}

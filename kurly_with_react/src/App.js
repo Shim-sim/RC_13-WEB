@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Footer from './components/Common/Footer';
 import { Route, Routes, Link } from 'react-router-dom';
+import { products } from './data.js';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main products={products} />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />

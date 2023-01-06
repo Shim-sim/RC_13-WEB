@@ -4,14 +4,13 @@ import RecommendBox from '../components/Main/RecommendBox';
 import Slide from '../components/Common/Slide.js';
 import RecommendSale from '../components/Main/RecommendSale';
 import SpecialSale from '../components/Main/SpecialSale';
-import { products } from '../data';
 
-const Main = (props) => {
+const Main = ({ products }) => {
   return (
     <>
       <Banner />
       <RecommendBox>이 상품 어때요?</RecommendBox>
-      <Slide data={products} />
+      <Slide products={products} />
       <RecommendSale />
       <SpecialSale />
     </>
