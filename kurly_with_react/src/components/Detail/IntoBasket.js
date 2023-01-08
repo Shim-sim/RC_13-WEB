@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const BasketWrapper = styled.div`
@@ -51,12 +51,36 @@ const ButtonBox = styled.div`
   }
 `;
 
-const IntoBasket = () => {
+const StyledRedHeart = styled.div`
+  display: block;
+  padding: 0 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 56px;
+  height: 56px;
+  border-radius: 3px;
+  color: #333;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBmaWxsPSIjRkY1QTVBIiBzdHJva2U9IiNGRjVBNUEiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K)
+    no-repeat 50% 50%;
+`;
+
+const IntoBasket = ({ handleCart }) => {
+  const [heartToggle, setHeartToggle] = useState(true);
+  const onHeartHandler = () => {
+    setHeartToggle(!heartToggle);
+  };
   return (
     <BasketWrapper>
+      {heartToggle ? (
+        <StyledRedHeart onClick={onHeartHandler} />
+      ) : (
+        <span onClick={onHeartHandler}></span>
+      )}
       <span></span>
-      <span></span>
-      <ButtonBox>장바구니 담기</ButtonBox>
+      <ButtonBox onClick={() => handleCart()}>장바구니 담기</ButtonBox>
     </BasketWrapper>
   );
 };

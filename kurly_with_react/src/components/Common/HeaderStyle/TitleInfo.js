@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import Logo from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
+import Cart from '../../../pages/Cart';
 const TitleInfoWrap = styled.div`
   height: 100px;
   padding-top: 36px;
@@ -86,7 +87,22 @@ const TitleInfoWrap = styled.div`
   }
 `;
 
-const TitleInfo = () => {
+const StyledCart = styled.span`
+  background-color: #5e0080;
+  border-radius: 50%;
+  position: absolute;
+  right: 17px;
+  min-width: 15px;
+  height: 15px;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  padding-top: 3px;
+  font-weight: bold;
+  top: 38px;
+`;
+
+const TitleInfo = ({ cart }) => {
   return (
     <TitleInfoWrap>
       <div className="info_left">
@@ -106,7 +122,9 @@ const TitleInfo = () => {
         <div></div>
         <div></div>
         <Link to="/cart">
-          <div></div>
+          <div>
+            {cart.length >= 1 ? <StyledCart>{cart.length}</StyledCart> : ''}
+          </div>
         </Link>
       </div>
     </TitleInfoWrap>

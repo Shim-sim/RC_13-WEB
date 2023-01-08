@@ -71,9 +71,14 @@ const ProductSelectBox = styled.div`
   padding-bottom: 40px;
 `;
 
-const DetailInfoText = ({ paramsId, products, convertPrice }) => {
-  const [count, setCount] = useState(1);
-
+const DetailInfoText = ({
+  paramsId,
+  products,
+  convertPrice,
+  count,
+  setCount,
+  handleCart,
+}) => {
   const HandleQuantity = (type) => {
     if (type === 'plus') {
       setCount(count + 1);
@@ -138,7 +143,7 @@ const DetailInfoText = ({ paramsId, products, convertPrice }) => {
           count={count}
           convertPrice={convertPrice}
         />
-        <IntoBasket />
+        <IntoBasket handleCart={handleCart} />
       </ProductSelectBox>
     </>
   );
