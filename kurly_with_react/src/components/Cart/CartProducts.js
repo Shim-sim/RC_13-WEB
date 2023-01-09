@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import CartItem from './CartItem';
 
 const Wrapper = styled.div`
-  width: 724px;
+  width: 740px;
 `;
 
 const ProductSelectBox = styled.div`
@@ -52,7 +53,7 @@ const EmpryCart = styled.p`
   text-align: center;
   color: #b5b5b5;
 `;
-const CartProducts = () => {
+const CartProducts = ({ cart, convertPrice, handleQuantity, handleRemove }) => {
   return (
     <Wrapper>
       <ProductSelectBox>
@@ -70,16 +71,22 @@ const CartProducts = () => {
         </div>
       </ProductSelectBox>
       <CartBox>
-        {/* 이 부분 조건문 추가해서 uI조작 */}
-        <EmpryCart>장바구나에 담긴 상품이 없습니다</EmpryCart>
+        {cart.length === 0 ? (
+          <EmpryCart>장바구니에 담긴 상품이 없습니다.</EmpryCart>
+        ) : (
+          cart.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              convertPrice={convertPrice}
+              handleQuantity={handleQuantity}
+              handleRemove={handleRemove}
+            />
+          ))
+        )}
       </CartBox>
     </Wrapper>
   );
 };
 
 export default CartProducts;
-
-// Wrapper 안에는 div가 총 3개가 있다.
-// 1번은 상단 전체선택 및 삭제 ProductSelectBox
-// 2번은 상품 목록을 보여주는것 2번은 조건문을 주어서 상품이 있으면 ui 없으면 다른 uI형태로 보여줄 것. <CartBox>
-// 3번도 1번과 전부 동일한 uI를 보여주는데 왜 있는지 모르겠다 우선 만들어보자

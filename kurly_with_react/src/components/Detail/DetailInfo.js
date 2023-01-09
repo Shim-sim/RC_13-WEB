@@ -67,6 +67,7 @@ const DetailInfo = ({ products, paramsId, convertPrice, cart, setCart }) => {
       id: products[paramsId].id,
       title: products[paramsId].title,
       price: products[paramsId].price,
+      img: products[paramsId].img,
       quantity: quantity,
     };
     setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
@@ -77,13 +78,12 @@ const DetailInfo = ({ products, paramsId, convertPrice, cart, setCart }) => {
       id: products[paramsId].id,
       title: products[paramsId].title,
       price: products[paramsId].price,
+      img: products[paramsId].img,
       quantity: count,
     };
     const found = cart.find((el) => el.id === cartItem.id);
     if (found) setQuantity(cartItem.id, found.quantity + count);
     else setCart([...cart, cartItem]);
-
-    console.log(cart);
   };
 
   return (

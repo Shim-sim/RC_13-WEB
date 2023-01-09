@@ -10,10 +10,15 @@ const CartInfoWrap = styled.div`
   letter-spacing: -0.5px;
 `;
 
-const CartInfo = () => {
+const CartInfo = ({ cart, convertPrice, handleQuantity, handleRemove }) => {
   return (
     <CartInfoWrap>
-      <CartProducts />
+      <CartProducts
+        cart={cart}
+        convertPrice={convertPrice}
+        handleQuantity={handleQuantity}
+        handleRemove={handleRemove}
+      />
       <CartDelivery />
     </CartInfoWrap>
   );
