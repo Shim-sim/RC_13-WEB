@@ -34,7 +34,7 @@ const Detail = ({ products, convertPrice, cart, setCart }) => {
           setCart={setCart}
         />
       </DetailMain>
-      <DetailNav />
+      <DetailNav products={products} paramsId={paramsId} />
     </DetailBox>
   );
 };

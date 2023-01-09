@@ -37,8 +37,14 @@ const DescriptionBox = styled.div`
     text-align: center;
     margin-top: 25px;
   }
+
+  img {
+    width: 100%;
+    height: 650px;
+  }
 `;
-const DetailNav = () => {
+const DetailNav = ({ paramsId, products }) => {
+  console.log(products);
   return (
     <>
       <Wrapper>
@@ -50,12 +56,7 @@ const DetailNav = () => {
         </ListBox>
       </Wrapper>
       <DescriptionBox>
-        <img
-          src={
-            'https://img-cf.kurly.com/shop/data/goodsview/20200410/gv30000090108_1.jpg'
-          }
-          alt="메인베너"
-        />
+        <img src={products[paramsId].img} alt="메인베너" />
         <p>상품설명 내용</p>
       </DescriptionBox>
     </>
