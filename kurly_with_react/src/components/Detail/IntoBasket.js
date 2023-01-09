@@ -68,7 +68,7 @@ const StyledRedHeart = styled.div`
 `;
 
 const IntoBasket = ({ handleCart }) => {
-  const [heartToggle, setHeartToggle] = useState(true);
+  const [heartToggle, setHeartToggle] = useState(false);
   const onHeartHandler = () => {
     setHeartToggle(!heartToggle);
   };
