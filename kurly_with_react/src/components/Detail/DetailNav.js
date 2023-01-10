@@ -44,7 +44,6 @@ const DescriptionBox = styled.div`
   }
 `;
 const DetailNav = ({ paramsId, products }) => {
-  console.log(products);
   return (
     <>
       <Wrapper>
