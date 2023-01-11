@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../_actions';
 import styled from 'styled-components';
 
 const BasketWrapper = styled.div`
@@ -67,8 +69,9 @@ const StyledRedHeart = styled.div`
     no-repeat 50% 50%;
 `;
 
-const IntoBasket = ({ handleCart }) => {
+const IntoBasket = ({ products, paramsId }) => {
   const [heartToggle, setHeartToggle] = useState(false);
+  const dispatch = useDispatch();
   const onHeartHandler = () => {
     setHeartToggle(!heartToggle);
   };
@@ -80,7 +83,9 @@ const IntoBasket = ({ handleCart }) => {
         <span onClick={onHeartHandler}></span>
       )}
       <span></span>
-      <ButtonBox onClick={() => handleCart()}>장바구니 담기</ButtonBox>
+      <ButtonBox onClick={() => dispatch(addCart(products[paramsId]))}>
+        장바구니 담기
+      </ButtonBox>
     </BasketWrapper>
   );
 };

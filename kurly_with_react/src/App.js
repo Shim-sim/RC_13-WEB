@@ -30,14 +30,7 @@ function App() {
         />
         <Route
           path="/detail/:id"
-          element={
-            <Detail
-              products={products}
-              convertPrice={convertPrice}
-              cart={cart}
-              setCart={setCart}
-            />
-          }
+          element={<Detail products={products} convertPrice={convertPrice} />}
         />
         <Route
           path="/cart"

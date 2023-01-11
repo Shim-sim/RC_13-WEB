@@ -4,3 +4,17 @@ export const addCart = (item) => {
     payload: item,
   };
 };
+
+export const countIncrement = (count) => {
+  return {
+    type: 'INCREMENT',
+    payload: count,
+  };
+};
+
+export const countDecrement = (count) => {
+  return {
+    type: 'DECREMENT',
+    payload: count,
+  };
+};

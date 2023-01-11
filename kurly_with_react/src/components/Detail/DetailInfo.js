@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import DetailInfoText from './DetailInfoText';
+
 const DetailInfoBox = styled.div`
   width: 560px;
   display: block;
@@ -54,38 +55,7 @@ const MoreInfo = styled.h2`
   letter-spacing: -0.5px;
 `;
 
-const DetailInfo = ({ products, paramsId, convertPrice, cart, setCart }) => {
-  const [count, setCount] = useState(1);
-
-  /**
-   * 중복 된 물건을 담을 때 사용하는 함수
-   */
-  const setQuantity = (id, quantity) => {
-    const found = cart.filter((el) => el.id === id)[0];
-    const idx = cart.indexOf(found);
-    const cartItem = {
-      id: products[paramsId].id,
-      title: products[paramsId].title,
-      price: products[paramsId].price,
-      img: products[paramsId].img,
-      quantity: quantity,
-    };
-    setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
-  };
-
-  const handleCart = () => {
-    const cartItem = {
-      id: products[paramsId].id,
-      title: products[paramsId].title,
-      price: products[paramsId].price,
-      img: products[paramsId].img,
-      quantity: count,
-    };
-    const found = cart.find((el) => el.id === cartItem.id);
-    if (found) setQuantity(cartItem.id, found.quantity + count);
-    else setCart([...cart, cartItem]);
-  };
-
+const DetailInfo = ({ products, paramsId, convertPrice }) => {
   return (
     <DetailInfoBox>
       <DeliverType>샛별배송</DeliverType>
@@ -100,9 +70,6 @@ const DetailInfo = ({ products, paramsId, convertPrice, cart, setCart }) => {
         products={products}
         paramsId={paramsId}
         convertPrice={convertPrice}
-        count={count}
-        setCount={setCount}
-        handleCart={handleCart}
       />
     </DetailInfoBox>
   );

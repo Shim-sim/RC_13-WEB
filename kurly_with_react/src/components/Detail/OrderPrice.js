@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 const OrderPriceBox = styled.div`
   padding-top: 30px;
@@ -39,9 +40,9 @@ const OrderAmout = styled.div`
   }
 `;
 
-const OrderPrice = ({ count, convertPrice, products, paramsId }) => {
+const OrderPrice = ({ convertPrice, products, paramsId }) => {
   const allPrice = products[paramsId].price;
-
+  const count = useSelector((state) => state.cartReducer.count);
   return (
     <OrderPriceBox>
       <OrderPriceWrapper>
