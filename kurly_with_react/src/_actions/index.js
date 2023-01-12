@@ -5,6 +5,13 @@ export const addCart = (item) => {
   };
 };
 
+export const deleteCart = (item) => {
+  return {
+    type: 'DELETE_CART',
+    payload: item,
+  };
+};
+
 export const countIncrement = (count) => {
   return {
     type: 'INCREMENT',
@@ -16,5 +23,26 @@ export const countDecrement = (count) => {
   return {
     type: 'DECREMENT',
     payload: count,
+  };
+};
+
+export const quantityIncrement = (count) => {
+  return {
+    type: 'QUANTITY_INCREMENT',
+    payload: count,
+  };
+};
+
+export const quantityDecrement = (count) => {
+  return {
+    type: 'QUANTITY_DECREMENT',
+    payload: count,
+  };
+};
+
+export const testPrice = (price) => {
+  return {
+    type: 'CONVERT_PRICE',
+    payload: price,
   };
 };

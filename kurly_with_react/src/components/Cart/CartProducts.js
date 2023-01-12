@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import CartItem from './CartItem';
 
@@ -53,7 +54,9 @@ const EmpryCart = styled.p`
   text-align: center;
   color: #b5b5b5;
 `;
-const CartProducts = ({ cart, convertPrice, handleQuantity, handleRemove }) => {
+const CartProducts = ({ convertPrice }) => {
+  const cart = useSelector((state) => state.cartReducer.cart);
+
   return (
     <Wrapper>
       <ProductSelectBox>
@@ -75,13 +78,7 @@ const CartProducts = ({ cart, convertPrice, handleQuantity, handleRemove }) => {
           <EmpryCart>장바구니에 담긴 상품이 없습니다.</EmpryCart>
         ) : (
           cart.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              convertPrice={convertPrice}
-              handleQuantity={handleQuantity}
-              handleRemove={handleRemove}
-            />
+            <CartItem key={item.id} item={item} convertPrice={convertPrice} />
           ))
         )}
       </CartBox>

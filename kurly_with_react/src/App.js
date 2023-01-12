@@ -12,8 +12,6 @@ import { products } from './data.js';
 import { useState } from 'react';
 
 function App() {
-  const [cart, setCart] = useState([]);
-
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
@@ -21,7 +19,7 @@ function App() {
   return (
     <>
       <Reset />
-      <Header cart={cart} />
+      <Header />
       <NavBar />
       <Routes>
         <Route
@@ -32,12 +30,7 @@ function App() {
           path="/detail/:id"
           element={<Detail products={products} convertPrice={convertPrice} />}
         />
-        <Route
-          path="/cart"
-          element={
-            <Cart cart={cart} setCart={setCart} convertPrice={convertPrice} />
-          }
-        />
+        <Route path="/cart" element={<Cart convertPrice={convertPrice} />} />
         <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { testPrice } from '../../_actions';
 import styled from 'styled-components';
 
 const CartDeliveryWrapper = styled.div`
@@ -101,6 +103,8 @@ const DeliveryBottomBox = styled.div`
   padding-top: 20px;
 `;
 const CartDelivery = () => {
+  const totalPrice = useSelector((state) => state.cartReducer.total);
+  const dispatch = useDispatch();
   return (
     <CartDeliveryWrapper>
       <CartDeliveryBox>
@@ -137,7 +141,8 @@ const CartDelivery = () => {
           <PriceBlock border="true" margin="true">
             <PriceTitle>결제예정금액</PriceTitle>
             <PriceTotal>
-              0<span>원</span>
+              {totalPrice}
+              <span>원</span>
             </PriceTotal>
           </PriceBlock>
         </ProductsPriceBox>
@@ -148,9 +153,3 @@ const CartDelivery = () => {
 };
 
 export default CartDelivery;
-
-//CartDeliveryBox에도 3개의 div가 있다.
-
-// 1. 이건 배송지 텟스트랑 주소검색 하는 것. DeliveryAdressBox
-// 2. 이건 상품 금액 및 결제정보 있는 것.  ProductsPriceBox
-// 3. 하단 상품 텍스트 영역.  DeliveryBottomBox
