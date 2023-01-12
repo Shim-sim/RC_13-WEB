@@ -71,22 +71,7 @@ const ProductSelectBox = styled.div`
   padding-bottom: 40px;
 `;
 
-const DetailInfoText = ({
-  paramsId,
-  products,
-  convertPrice,
-  count,
-  setCount,
-  handleCart,
-}) => {
-  const HandleQuantity = (type) => {
-    if (type === 'plus') {
-      setCount(count + 1);
-    } else {
-      if (count === 1) return;
-      setCount(count - 1);
-    }
-  };
+const DetailInfoText = ({ paramsId, products, convertPrice }) => {
   return (
     <>
       <PriceBox>
@@ -131,19 +116,13 @@ const DetailInfoText = ({
         </dl>
       </ProductInfoBox>
       <ProductSelectBox>
-        <ProductType
-          products={products}
-          paramsId={paramsId}
-          count={count}
-          HandleQuantity={HandleQuantity}
-        />
+        <ProductType products={products} paramsId={paramsId} />
         <OrderPrice
           products={products}
           paramsId={paramsId}
-          count={count}
           convertPrice={convertPrice}
         />
-        <IntoBasket handleCart={handleCart} />
+        <IntoBasket products={products} paramsId={paramsId} />
       </ProductSelectBox>
     </>
   );

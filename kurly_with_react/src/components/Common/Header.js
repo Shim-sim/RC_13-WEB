@@ -13,11 +13,11 @@ const HeaderWrap = styled.div`
   letter-spacing: -0.3px;
 `;
 
-const Header = ({ cart }) => {
+const Header = () => {
   return (
     <HeaderWrap>
       <LoginInfo />
-      <TitleInfo cart={cart} />
+      <TitleInfo />
     </HeaderWrap>
   );
 };

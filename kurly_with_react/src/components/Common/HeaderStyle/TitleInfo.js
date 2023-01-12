@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Logo from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import Cart from '../../../pages/Cart';
+import { useSelector } from 'react-redux';
 const TitleInfoWrap = styled.div`
   height: 100px;
   padding-top: 36px;
@@ -102,7 +103,8 @@ const StyledCart = styled.span`
   top: 38px;
 `;
 
-const TitleInfo = ({ cart }) => {
+const TitleInfo = () => {
+  const cart = useSelector((state) => state.cartReducer.cart);
   return (
     <TitleInfoWrap>
       <div className="info_left">

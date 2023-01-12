@@ -1,5 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import {
+  deleteCart,
+  quantityIncrement,
+  quantityDecrement,
+} from '../../_actions';
 
 const CartList = styled.li`
   display: flex;
@@ -115,7 +121,8 @@ const DeleteItemBtn = styled.button`
   background-color: transparent;
 `;
 
-const CartItem = ({ item, convertPrice, handleQuantity, handleRemove }) => {
+const CartItem = ({ item, convertPrice }) => {
+  const dispatch = useDispatch();
   return (
     <ul>
       <CartList>
@@ -131,18 +138,14 @@ const CartItem = ({ item, convertPrice, handleQuantity, handleRemove }) => {
         </CartImgBox>
         <CartTitle>{item.title}</CartTitle>
         <OrderButtonBox>
-          <button
-            onClick={() => handleQuantity('minus', item.id, item.quantity - 1)}
-          />
+          <button onClick={() => dispatch(quantityDecrement(item))} />
           <OrderCount>{item.quantity}</OrderCount>
-          <button
-            onClick={() => handleQuantity('plus', item.id, item.quantity + 1)}
-          />
+          <button onClick={() => dispatch(quantityIncrement(item))} />
         </OrderButtonBox>
         <CartItemPrice>
           {convertPrice(item.price * item.quantity)}원
         </CartItemPrice>
-        <DeleteItemBtn onClick={() => handleRemove(item.id)} />
+        <DeleteItemBtn onClick={() => dispatch(deleteCart(item))} />
       </CartList>
     </ul>
   );

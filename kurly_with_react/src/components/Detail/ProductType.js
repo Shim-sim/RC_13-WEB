@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { countIncrement, countDecrement } from '../../_actions/index';
 
 const ProductTypeBox = styled.div`
   border-bottom: 1px solid rgb(244, 244, 244);
@@ -106,7 +108,9 @@ const OrderPrice = styled.div`
   padding-right: 5px;
 `;
 
-const ProductType = ({ count, HandleQuantity, paramsId, products }) => {
+const ProductType = ({ HandleQuantity, paramsId, products }) => {
+  const count = useSelector((state) => state.cartReducer.count);
+  const dispatch = useDispatch();
   return (
     <ProductTypeBox>
       <ProductTable>
@@ -115,9 +119,9 @@ const ProductType = ({ count, HandleQuantity, paramsId, products }) => {
           <OrderBoxTitle>{products[paramsId].title}</OrderBoxTitle>
           <OrderButtonWrapper>
             <OrderButtonBox>
-              <button onClick={() => HandleQuantity('minus')} />
+              <button onClick={() => dispatch(countDecrement())} />
               <OrderCount>{count}</OrderCount>
-              <button onClick={() => HandleQuantity('plus')} />
+              <button onClick={() => dispatch(countIncrement())} />
             </OrderButtonBox>
             <div>
               <OrderPrice>{products[paramsId].price}원</OrderPrice>
