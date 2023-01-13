@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { testPrice } from '../../_actions';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import convertPrice from '../../utils/convertPrice';
 
 const CartDeliveryWrapper = styled.div`
   position: relative;
@@ -104,7 +104,7 @@ const DeliveryBottomBox = styled.div`
 `;
 const CartDelivery = () => {
   const totalPrice = useSelector((state) => state.cartReducer.total);
-  const dispatch = useDispatch();
+
   return (
     <CartDeliveryWrapper>
       <CartDeliveryBox>
@@ -141,7 +141,7 @@ const CartDelivery = () => {
           <PriceBlock border="true" margin="true">
             <PriceTitle>결제예정금액</PriceTitle>
             <PriceTotal>
-              {totalPrice}
+              {convertPrice(totalPrice)}
               <span>원</span>
             </PriceTotal>
           </PriceBlock>

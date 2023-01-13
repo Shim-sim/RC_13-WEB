@@ -18,7 +18,7 @@ const DetailMain = styled.div`
   justify-content: space-between;
 `;
 
-const Detail = ({ products, convertPrice }) => {
+const Detail = ({ products }) => {
   let { id } = useParams();
   let paramsId = parseInt(id);
 
@@ -26,11 +26,7 @@ const Detail = ({ products, convertPrice }) => {
     <DetailBox>
       <DetailMain>
         <StyledImg products={products} paramsId={paramsId} />
-        <DetailInfo
-          products={products}
-          paramsId={paramsId}
-          convertPrice={convertPrice}
-        />
+        <DetailInfo products={products} paramsId={paramsId} />
       </DetailMain>
       <DetailNav products={products} paramsId={paramsId} />
     </DetailBox>

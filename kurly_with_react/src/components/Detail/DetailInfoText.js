@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ProductType from './ProductType';
 import OrderPrice from './OrderPrice';
 import IntoBasket from './IntoBasket';
+import convertPrice from '../../utils/convertPrice';
 
 const PriceBox = styled.h2`
   display: flex;
@@ -71,7 +72,7 @@ const ProductSelectBox = styled.div`
   padding-bottom: 40px;
 `;
 
-const DetailInfoText = ({ paramsId, products, convertPrice }) => {
+const DetailInfoText = ({ paramsId, products }) => {
   return (
     <>
       <PriceBox>
@@ -117,11 +118,7 @@ const DetailInfoText = ({ paramsId, products, convertPrice }) => {
       </ProductInfoBox>
       <ProductSelectBox>
         <ProductType products={products} paramsId={paramsId} />
-        <OrderPrice
-          products={products}
-          paramsId={paramsId}
-          convertPrice={convertPrice}
-        />
+        <OrderPrice products={products} paramsId={paramsId} />
         <IntoBasket products={products} paramsId={paramsId} />
       </ProductSelectBox>
     </>

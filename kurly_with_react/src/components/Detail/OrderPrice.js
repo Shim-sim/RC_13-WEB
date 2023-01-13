@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import convertPrice from '../../utils/convertPrice';
 
 const OrderPriceBox = styled.div`
   padding-top: 30px;
@@ -40,7 +41,7 @@ const OrderAmout = styled.div`
   }
 `;
 
-const OrderPrice = ({ convertPrice, products, paramsId }) => {
+const OrderPrice = ({ products, paramsId }) => {
   const allPrice = products[paramsId].price;
   const count = useSelector((state) => state.cartReducer.count);
   return (

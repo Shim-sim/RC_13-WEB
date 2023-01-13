@@ -54,7 +54,7 @@ const EmpryCart = styled.p`
   text-align: center;
   color: #b5b5b5;
 `;
-const CartProducts = ({ convertPrice }) => {
+const CartProducts = () => {
   const cart = useSelector((state) => state.cartReducer.cart);
 
   return (
@@ -77,9 +77,7 @@ const CartProducts = ({ convertPrice }) => {
         {cart.length === 0 ? (
           <EmpryCart>장바구니에 담긴 상품이 없습니다.</EmpryCart>
         ) : (
-          cart.map((item) => (
-            <CartItem key={item.id} item={item} convertPrice={convertPrice} />
-          ))
+          cart.map((item) => <CartItem key={item.id} item={item} />)
         )}
       </CartBox>
     </Wrapper>

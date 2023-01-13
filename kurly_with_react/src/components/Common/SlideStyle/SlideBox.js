@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SlideText from './SlideText';
 import IntoCartButton from './IntoCartButton';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 
 const ProductBox = styled.div`
   width: 1050px;
@@ -35,9 +34,7 @@ const ProductImg = styled.img.attrs({ alt: '제품 이미지' })`
   }
 `;
 
-const SlideBox = ({ products, convertPrice }) => {
-  const dispatch = useDispatch();
-
+const SlideBox = ({ products }) => {
   return (
     <ProductBox>
       <ImgBox>
@@ -49,7 +46,7 @@ const SlideBox = ({ products, convertPrice }) => {
             >
               <ProductImg src={item.img} />
             </Link>
-            <SlideText products={item} convertPrice={convertPrice} />
+            <SlideText products={item} />
             <IntoCartButton />
           </Container>
         ))}

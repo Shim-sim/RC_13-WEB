@@ -12,25 +12,15 @@ import { products } from './data.js';
 import { useState } from 'react';
 
 function App() {
-  const convertPrice = (price) => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
   return (
     <>
       <Reset />
       <Header />
       <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={<Main products={products} convertPrice={convertPrice} />}
-        />
-        <Route
-          path="/detail/:id"
-          element={<Detail products={products} convertPrice={convertPrice} />}
-        />
-        <Route path="/cart" element={<Cart convertPrice={convertPrice} />} />
+        <Route path="/" element={<Main products={products} />} />
+        <Route path="/detail/:id" element={<Detail products={products} />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import convertPrice from '../../../utils/convertPrice';
 
 const ProductInfo = styled.div`
   position: relative;
@@ -24,7 +25,7 @@ const ProductPrice = styled.span`
   line-height: 1.5;
   white-space: nowrap;
 `;
-const SlideText = ({ products, convertPrice }) => {
+const SlideText = ({ products }) => {
   return (
     <ProductInfo>
       <ProductName>{products.title}</ProductName>

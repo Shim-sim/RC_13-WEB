@@ -5,12 +5,12 @@ import Slide from '../components/Common/Slide.js';
 import RecommendSale from '../components/Main/RecommendSale';
 import SpecialSale from '../components/Main/SpecialSale';
 
-const Main = ({ products, convertPrice }) => {
+const Main = ({ products }) => {
   return (
     <>
       <Banner />
       <RecommendBox>이 상품 어때요?</RecommendBox>
-      <Slide products={products} convertPrice={convertPrice} />
+      <Slide products={products} />
       <RecommendSale />
       <SpecialSale />
     </>

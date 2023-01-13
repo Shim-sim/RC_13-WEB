@@ -10,10 +10,10 @@ const CartInfoWrap = styled.div`
   letter-spacing: -0.5px;
 `;
 
-const CartInfo = ({ convertPrice }) => {
+const CartInfo = () => {
   return (
     <CartInfoWrap>
-      <CartProducts convertPrice={convertPrice} />
+      <CartProducts />
       <CartDelivery />
     </CartInfoWrap>
   );

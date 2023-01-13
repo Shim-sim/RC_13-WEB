@@ -55,7 +55,7 @@ const MoreInfo = styled.h2`
   letter-spacing: -0.5px;
 `;
 
-const DetailInfo = ({ products, paramsId, convertPrice }) => {
+const DetailInfo = ({ products, paramsId }) => {
   return (
     <DetailInfoBox>
       <DeliverType>샛별배송</DeliverType>
@@ -66,11 +66,7 @@ const DetailInfo = ({ products, paramsId, convertPrice }) => {
         </DetailTitle>
         <MoreInfo>세부사항을 확인해주세요</MoreInfo>
       </DetailTitleBox>
-      <DetailInfoText
-        products={products}
-        paramsId={paramsId}
-        convertPrice={convertPrice}
-      />
+      <DetailInfoText products={products} paramsId={paramsId} />
     </DetailInfoBox>
   );
 };

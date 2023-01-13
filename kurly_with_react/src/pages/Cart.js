@@ -15,11 +15,11 @@ const CartTitle = styled.h2`
   line-height: 35px;
   text-align: center;
 `;
-const Cart = ({ convertPrice }) => {
+const Cart = () => {
   return (
     <CartWrap>
       <CartTitle>장바구니</CartTitle>
-      <CartInfo convertPrice={convertPrice} />
+      <CartInfo />
     </CartWrap>
   );
 };
