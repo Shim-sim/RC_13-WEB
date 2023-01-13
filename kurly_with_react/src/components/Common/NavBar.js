@@ -15,7 +15,7 @@ const NavWrap = styled.div`
   align-items: baseline;
   min-width: 1050px;
   height: 56px;
-  margin: 0px auto;
+  margin: 0 40px;
   z-index: 100;
   box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
 `;

@@ -66,6 +66,7 @@ const TitleInfoWrap = styled.div`
 
   .info_right {
     display: flex;
+    margin-top: 10px;
   }
 
   .info_right div {

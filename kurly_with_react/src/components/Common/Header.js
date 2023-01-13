@@ -7,7 +7,7 @@ import TitleInfo from './HeaderStyle/TitleInfo';
 
 const HeaderWrap = styled.div`
   position: relative;
-  width: 1050px;
+  width: 1130px;
   height: 100px;
   margin: 7px auto;
   letter-spacing: -0.3px;
