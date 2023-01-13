@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SlideText from './SlideText';
 import IntoCartButton from './IntoCartButton';
 import { Link } from 'react-router-dom';
+import { products } from '../../../data';
 
 const ProductBox = styled.div`
   width: 1050px;
@@ -34,7 +35,7 @@ const ProductImg = styled.img.attrs({ alt: '제품 이미지' })`
   }
 `;
 
-const SlideBox = ({ products }) => {
+const SlideBox = () => {
   return (
     <ProductBox>
       <ImgBox>

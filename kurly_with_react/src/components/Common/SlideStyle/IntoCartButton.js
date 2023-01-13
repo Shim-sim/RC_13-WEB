@@ -14,6 +14,7 @@ const ButtonBox = styled.button`
 const ButtonImg = styled.img`
   width: 45px;
   height: 45px;
+  vertical-align: middle;
 `;
 const IntoCartButton = () => {
   return (

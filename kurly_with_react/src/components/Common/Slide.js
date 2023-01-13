@@ -70,7 +70,7 @@ const Slide = ({ products }) => {
   return (
     <ProductsWrapper>
       <FlexBox ref={slideRef}>
-        <SlideBox products={products} />
+        <SlideBox />
       </FlexBox>
       {currentSlide ? (
         <LeftButton

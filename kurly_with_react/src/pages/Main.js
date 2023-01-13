@@ -5,12 +5,12 @@ import Slide from '../components/Common/Slide.js';
 import RecommendSale from '../components/Main/RecommendSale';
 import SpecialSale from '../components/Main/SpecialSale';
 
-const Main = ({ products }) => {
+const Main = () => {
   return (
     <>
       <Banner />
       <RecommendBox>이 상품 어때요?</RecommendBox>
-      <Slide products={products} />
+      <Slide />
       <RecommendSale />
       <SpecialSale />
     </>

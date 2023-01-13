@@ -4,6 +4,7 @@ import StyledImg from '../components/Detail/ProductAlt';
 import DetailInfo from '../components/Detail/DetailInfo';
 import DetailNav from '../components/Detail/DetailNav';
 import { useParams } from 'react-router-dom';
+import { products } from '../data';
 
 const DetailBox = styled.div`
   position: relative;
@@ -18,7 +19,7 @@ const DetailMain = styled.div`
   justify-content: space-between;
 `;
 
-const Detail = ({ products }) => {
+const Detail = () => {
   let { id } = useParams();
   let paramsId = parseInt(id);
 
