@@ -7,7 +7,7 @@ const ButtonBox = styled.button`
   border: none;
   border-radius: 50%;
   background-color: #b196ae;
-  margin-left: 200px;
+  margin-left: 193px;
   bottom: 35%;
 `;
 

@@ -7,6 +7,16 @@ const ProductsWrapper = styled.div`
   width: 1050px;
   margin: 0px auto;
   overflow: hidden;
+  @media screen and (max-width: 1050px) {
+    width: 785px;
+  }
+  @media screen and (max-width: 890px) {
+    width: 520px;
+  }
+
+  @media screen and (max-width: 630px) {
+    width: 260px;
+  }
 `;
 
 const FlexBox = styled.div`
