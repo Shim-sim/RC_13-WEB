@@ -1,10 +1,10 @@
-/* eslint-disable */
-
+import { useState } from 'react';
 import styled from 'styled-components';
 import Logo from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
-import Cart from '../../../pages/Cart';
-import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { addSearchItem } from '../../../_actions';
 const TitleInfoWrap = styled.div`
   height: 100px;
   padding-top: 36px;
@@ -105,7 +105,15 @@ const StyledCart = styled.span`
 `;
 
 const TitleInfo = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cartReducer.cart);
+  const [searchText, setSearchText] = useState(null);
+
+  const onSearchHandler = () => {
+    navigate(`/search/${searchText}`);
+  };
+
   return (
     <TitleInfoWrap>
       <div className="info_left">
@@ -117,8 +125,18 @@ const TitleInfo = () => {
       </div>
       <div className="info_center">
         <div>
-          <input placeholder="검색어를 입력해주세요" />
-          <button></button>
+          <input
+            placeholder="검색어를 입력해주세요"
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              dispatch(addSearchItem(searchText));
+              onSearchHandler();
+            }}
+          ></button>
         </div>
       </div>
       <div className="info_right">

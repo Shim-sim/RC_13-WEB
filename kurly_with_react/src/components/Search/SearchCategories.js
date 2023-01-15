@@ -48,7 +48,7 @@ const SearchCategories = () => {
   return (
     <StyledBox>
       {arrayItem.map((item, index) => (
-        <CategoryBox>
+        <CategoryBox key={item}>
           <CategoryItem>
             <CategoryTitle>{item}</CategoryTitle>
           </CategoryItem>

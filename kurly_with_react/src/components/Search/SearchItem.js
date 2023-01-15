@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import { products } from '../../data';
+import SearchProducts from './SearchProducts';
 
 const arrayList = [
   '추천순',
@@ -55,19 +58,22 @@ const ListOfTest = styled.ul`
   }
 `;
 
-const ItemFlex = styled.div``;
-
 const SearchItem = () => {
+  const keyWord = useSelector((state) => state.searchItemReducer.keyWord);
+  const productsItem = products.filter((item) => {
+    return item.title.includes(keyWord);
+  }).length;
   return (
     <ItemBox>
       <ItemInfo>
-        <ItemLength>총 개수</ItemLength>
+        <ItemLength>총 {productsItem}건</ItemLength>
         <ListOfTest>
           {arrayList.map((item) => (
-            <li>{item}</li>
+            <li key={item}>{item}</li>
           ))}
         </ListOfTest>
       </ItemInfo>
+      <SearchProducts />
     </ItemBox>
   );
 };

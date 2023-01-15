@@ -40,9 +40,9 @@ export const quantityDecrement = (count) => {
   };
 };
 
-export const testPrice = (price) => {
+export const addSearchItem = (item) => {
   return {
-    type: 'CONVERT_PRICE',
-    payload: price,
+    type: 'ADD_SEARCH',
+    payload: item,
   };
 };

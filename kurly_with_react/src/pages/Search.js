@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import SearchCategories from '../components/Search/SearchCategories';
 import SearchItem from '../components/Search/SearchItem';
@@ -23,6 +24,17 @@ const SearchHeader = styled.h3`
   letter-spacing: -0.5px;
   text-align: center;
 `;
+
+const SearchHighlight = styled.span`
+  display: inline-block;
+  overflow: hidden;
+  max-width: 840px;
+  color: rgb(95, 0, 128);
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: top;
+`;
 const SearchMain = styled.div`
   position: relative;
   display: flex;
@@ -33,10 +45,14 @@ const SearchMain = styled.div`
 `;
 
 const Search = () => {
+  const keyWord = useSelector((state) => state.searchItemReducer.keyWord);
+
   return (
     <SearchWrapper>
       <SearchBox>
-        <SearchHeader>props나 리덕스로 받아서 데이터 넣어줄것</SearchHeader>
+        <SearchHeader>
+          '<SearchHighlight>{keyWord}</SearchHighlight>'에 대한 검색결과
+        </SearchHeader>
         <SearchMain>
           <SearchCategories />
           <SearchItem />
