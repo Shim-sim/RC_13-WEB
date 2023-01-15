@@ -5,6 +5,7 @@ import NavBar from './components/Common/NavBar';
 import Main from './pages/Main';
 import Detail from './pages/Detail';
 import Cart from './pages/Cart';
+import Search from './pages/Search';
 import Login from './pages/Login';
 import Footer from './components/Common/Footer';
 import { Route, Routes, Link } from 'react-router-dom';
@@ -21,6 +22,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/search/:title" element={<Search />} />
       </Routes>
       <Footer />
     </>
