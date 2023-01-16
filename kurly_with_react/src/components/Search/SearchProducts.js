@@ -55,13 +55,13 @@ const SearchProducts = () => {
     <StyledBox>
       <ProductsBox>
         {productsItem.map((item) => (
-          <>
-            <ImgBox key={item}>
+          <React.Fragment key={item.id}>
+            <ImgBox>
               <img src={item.img} alt="img" />
               <ProductName>{item.title}</ProductName>
               <ProductPrice>{convertPrice(item.price)}원</ProductPrice>
             </ImgBox>
-          </>
+          </React.Fragment>
         ))}
       </ProductsBox>
     </StyledBox>

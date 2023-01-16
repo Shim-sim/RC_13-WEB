@@ -1,5 +1,4 @@
-/* eslint-disable */
-
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -17,6 +16,7 @@ const LoginInfoWrap = styled.div`
   a {
     display: block;
     cursor: pointer;
+    color: black;
   }
 
   a:first-child {
@@ -42,19 +42,45 @@ const LoginInfoWrap = styled.div`
   }
 `;
 
+const LoginUser = styled.h3`
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+
+  p {
+    display: inline-block;
+    overflow: hidden;
+    color: rgb(95, 0, 128);
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+  }
+`;
+
 const LoginInfo = () => {
+  const [userId, setUserId] = useState(localStorage.getItem('id'));
+
+  useEffect(() => {}, []);
+
   return (
     <LoginInfoWrap>
-      <a>회원가입</a>
-      <div></div>
-      <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>
-        로그인
-      </Link>
-      <div></div>
-      <a>
-        고객센터
-        <span></span>
-      </a>
+      {userId ? (
+        <LoginUser>
+          <p>{userId}</p>님 환영합니다!
+        </LoginUser>
+      ) : (
+        <>
+          <a href="#!">회원가입</a>
+          <div></div>
+          <Link to="/login">로그인</Link>
+          <div></div>
+          <a href="#!">
+            고객센터
+            <span></span>
+          </a>
+        </>
+      )}
     </LoginInfoWrap>
   );
 };

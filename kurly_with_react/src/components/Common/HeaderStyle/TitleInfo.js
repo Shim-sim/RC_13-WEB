@@ -108,10 +108,11 @@ const TitleInfo = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cartReducer.cart);
-  const [searchText, setSearchText] = useState(null);
+  const [searchText, setSearchText] = useState('');
 
   const onSearchHandler = () => {
     navigate(`/search/${searchText}`);
+    setSearchText('');
   };
 
   return (
@@ -127,6 +128,7 @@ const TitleInfo = () => {
         <div>
           <input
             placeholder="검색어를 입력해주세요"
+            value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}

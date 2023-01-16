@@ -70,8 +70,6 @@ const cartReducer = (state = initailState, action) => {
       } else {
         return state;
       }
-    case 'CONVERT_PRICE':
-      const convert = action.payload;
 
     default:
       return state;
