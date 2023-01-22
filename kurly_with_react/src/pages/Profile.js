@@ -10,14 +10,17 @@ const Profile = () => {
   const getProfile = async () => {
     try {
       // Kakao SDK API를 이용해 사용자 정보 획득
+      console.log(window.Kakao.API);
       let data = await window.Kakao.API.request({
         url: '/v2/user/me',
       });
+      console.log(data);
       // 사용자 정보 변수에 저장
       setUserId(data.properties.nickname);
       localStorage.setItem('id', data.properties.nickname);
-      window.location.reload();
+
       navigate('/');
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
