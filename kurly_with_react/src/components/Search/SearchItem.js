@@ -63,6 +63,7 @@ const SearchItem = () => {
   const productsItem = products.filter((item) => {
     return item.title.includes(keyWord);
   }).length;
+
   return (
     <ItemBox>
       <ItemInfo>

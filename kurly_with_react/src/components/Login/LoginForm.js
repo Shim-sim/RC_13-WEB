@@ -73,9 +73,17 @@ const LoginButton = styled.div`
     margin-top: 10px;
   }
 `;
+const KakaoLogin = styled.a`
+  width: 200px;
+  height: 70px;
+  background-color: #ffe907;
+  text-align: center;
+  color: white;
+`;
+
 const LoginForm = () => {
   const REST_API_KEY = 'bfad3e783b00c7d48a85544f666984de';
-  const REDIRECT_URI = 'http://localhost:3000/oauth/kakao/token';
+  const REDIRECT_URI = 'http://localhost:3004/oauth/kakao/token';
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
   return (
@@ -96,7 +104,9 @@ const LoginForm = () => {
             <button>로그인</button>
             <button>회원가입</button>
           </LoginButton>
-          <a href={KAKAO_AUTH_URL}>카카오톡으로 로그인해보기</a>
+          <KakaoLogin href={KAKAO_AUTH_URL}>
+            카카오톡으로 로그인해보기
+          </KakaoLogin>
         </StyledForm>
       </LoginFormBox>
     </>

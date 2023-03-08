@@ -11,6 +11,7 @@ import Reducer from './_reducers';
 
 const store = createStore(Reducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
